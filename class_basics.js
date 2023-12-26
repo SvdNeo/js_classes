@@ -50,3 +50,41 @@ function user(name) {
   }
   const member1 = members("456");
   console.log(new member1().memberId())
+
+  class sports{
+    constructor(team){
+        this._team = team
+
+    }
+    get team(){
+        return this._team
+    }
+    set team(val){
+ this._team = val;
+    }
+  }
+  let sports1 = new sports("India")
+  console.log(sports1.team)
+// class User {
+
+//     constructor(name) {
+//       // invokes the setter
+//       this.name = name;
+//     }
+  
+//     get name() {
+//       return this._name;
+//     }
+  
+//     set name(value) {
+//       if (value.length < 4) {
+//         alert("Name is too short.");
+//         return;
+//       }
+//       this._name = value;
+//     }
+  
+//   }
+  
+//   let user = new User("John");
+//   alert(user.name); // John
