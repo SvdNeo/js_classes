@@ -88,3 +88,53 @@ function user(name) {
   
 //   let user = new User("John");
 //   alert(user.name); // John
+
+//Making bound methods with class fields
+class button{
+    constructor(val){
+        this.val = val
+    }
+    click = ()=>{
+        console.log(` Button is  ${this.val}`)
+    }
+}
+let btn = new button("Clicked")
+setTimeout(btn.click(),1000);
+
+//task 1 convert function to class constructor
+class Clock {
+  constructor({template}){
+    this.template = template;
+
+  }
+    
+     render() {
+      let date = new Date();
+  
+      let hours = date.getHours();
+      if (hours < 10) hours = '0' + hours;
+  
+      let mins = date.getMinutes();
+      if (mins < 10) mins = '0' + mins;
+  
+      let secs = date.getSeconds();
+      if (secs < 10) secs = '0' + secs;
+  
+      let output = this.template
+        .replace('h', hours)
+        .replace('m', mins)
+        .replace('s', secs);
+  
+      console.log(output);
+    }
+    stop() {
+        clearInterval(this.timer);
+      }
+    
+      start() {
+        this.render();
+        this.timer = setInterval(() => this.render(), 1000);
+      }
+}
+const clock = new Clock({template:'h:m:s'})
+clock.start()
