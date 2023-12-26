@@ -32,3 +32,15 @@ console.log(`${this.name} flies`)
 let swans = [new swan("white swan",10),new swan("black swan",5)]
 swans.sort(swan.compare)
 swans[0].fly()
+
+//Class extends Object?
+class Rabbit extends Object {
+    constructor(name) {
+      super(); 
+      this.name = name;
+    }
+  }
+  
+  let rabbit = new Rabbit("Rab");
+  
+  console.log( rabbit.hasOwnProperty('name') );
