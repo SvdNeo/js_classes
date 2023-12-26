@@ -28,7 +28,7 @@ function user(name) {
   let user2 = new user("John");
   user2.sayHi();
 
-  //class expression
+  //unamed class expression
   let member = class{
     constructor(id){
         this.id =id
