@@ -39,3 +39,14 @@ function user(name) {
   }
   const newMember = new member("12458")
   console.log(newMember.memberId())
+
+  //make classes dynamically “on-demand”
+  function members(iD){
+    return class{
+        memberId(){
+            return iD
+        }
+    }
+  }
+  const member1 = members("456");
+  console.log(new member1().memberId())
